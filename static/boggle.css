@@ -1,0 +1,55 @@
+.board {
+  border: solid 1px black;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 200%;
+}
+
+.board td {
+  text-align: center;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.msg {
+  padding: 1em;
+}
+
+.msg.ok {
+  color: white;
+  background-color: skyblue;
+}
+
+.msg.err {
+  color: white;
+  background-color: tomato;
+}
+
+h1 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+#boggle {
+  text-align: center;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button {
+  border-radius: 10px;
+  background-color: skyblue;
+  color: white;
+}
+
+input {
+  border-radius: 5px;
+}
+
+p {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+

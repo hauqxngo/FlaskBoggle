@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Boggle</title>
+    <link rel="stylesheet" href="/static/boggle.css">
+  </head>
+  <body>
+    <h1>Boggle</h1>
+    <p>
+      The goal of the game is to get the highest point total. To gain points, players create words from a random assortment of letters in a 5x5 grid.
+      <br>
+      <br>
+      Words can be created from adjacent letters – that is, letters which are horizontal or vertical neighbors of each other as well as diagonals. The letters must connect to each other in the proper sequence to spell the word correctly. This means that the next letter in the word can be above, below, left, or right of the previous letter in the word (excluding any letters previously used to construct the word).
+    </p>
+
+    <section id="boggle">
+
+      <table class="board">
+        <tbody>
+          {% for row in board %}
+          <tr>
+            {% for cell in row %}
+            <td>{{ cell }}</td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <p>You have played {{ nplays }} time(s)
+        <br>
+        High Score: <b>{{ highscore }}</b> 
+      </p>
+
+      <p>
+        Score: <b class="score">0</b>
+        <br>
+        Time left: <b class="timer"></b>
+      </p>
+
+      <form method="POST" class="add-word">
+        <input placeholder="Guess a word" name="word" class="word" autofocus>
+        <button>Submit</button>
+      </form>
+
+      <p class="msg">
+        <!-- JS will put messages here -->
+      </p>
+
+      <ul class="words">
+        <!-- JS will words here as they score -->   
+      </ul>
+
+    </section>
+    <script src="http://unpkg.com/jquery"></script>
+    <script src="https://unpkg.com/axios@0.19.0/dist/axios.js"></script>
+    <script src="/static/boggle.js"></script>
+    <script>
+      let game = new BoggleGame("boggle", 60);
+    </script>
+  </body>
+</html>
